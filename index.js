@@ -42,8 +42,6 @@ const whiteList = [
 app.use(
   cors({
     origin: whiteList,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
   })
 );
 
