@@ -75,13 +75,13 @@ app.use("/products", productRouter);
 const CONNECTION_URL = process.env.API_KEY;
 
 // Port of server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 //Connection message from mongoose
 mongoose
   .connect(CONNECTION_URL)
   .then(() =>
-    app.listen(process.env.PORT || 5000, () => {
+    app.listen(process.env.PORT || 3000, () => {
       console.log(`Server has been started on ${PORT}`);
     })
   )
