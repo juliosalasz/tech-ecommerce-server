@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use(
   cors({
     //web addresses allowed
-    origin: ["http://localhost:3000", "http://tech-ecommerce-site.netlify.app"],
+    origin: ["http://localhost:3000", "tech-ecommerce-site.netlify.app"],
     //for allowing this commands
     methods: ["GET", "POST", "PUT", "DELETE"],
     //for allowing cookies
