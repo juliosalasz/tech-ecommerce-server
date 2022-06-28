@@ -1,4 +1,4 @@
-# Tech Ecommerce Website
+# Tech Ecommerce Server Website
 
 Server for a Full Stack ecommerce site, created using the MERN Stack. Based on my previous project with new improvements.
 
