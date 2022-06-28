@@ -39,11 +39,7 @@ const whiteList = [
   "http://localhost:3000",
   "http://tech-ecommerce-site.netlify.app",
 ];
-app.use(
-  cors({
-    origin: whiteList,
-  })
-);
+app.use(cors());
 
 // {
 //   //web addresses allowed
