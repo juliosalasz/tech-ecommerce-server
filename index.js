@@ -35,7 +35,11 @@ app.use(bodyParser.json());
 
 //cors to allow connect the api to react frontend
 
-app.use(cors());
+const whiteList = [
+  "http://localhost:3000",
+  "http://tech-ecommerce-site.netlify.app",
+];
+app.use(cors({ origin: whiteList }));
 
 // {
 //   //web addresses allowed
