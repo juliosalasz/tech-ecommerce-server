@@ -35,17 +35,16 @@ app.use(bodyParser.json());
 
 //cors to allow connect the api to react frontend
 
-app.use(
-  cors({
-    //web addresses allowed
-    origin: ["http://localhost:3000", "tech-ecommerce-site.netlify.app"],
-    //for allowing this commands
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    //for allowing cookies
-    credentials: true,
-  })
-);
+app.use(cors());
 
+// {
+//   //web addresses allowed
+//   origin: ["http://localhost:3000", "tech-ecommerce-site.netlify.app"],
+//   //for allowing this commands
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   //for allowing cookies
+//   credentials: true,
+// }
 app.set("view engine", "ejs");
 app.use("/images", express.static("images"));
 
