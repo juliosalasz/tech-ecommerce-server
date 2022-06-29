@@ -19,7 +19,7 @@ const ordersSchema = mongoose.Schema([
     deliveryLastName: { type: String, required: true },
     deliveryAddress: { type: String, required: true },
     deliveryPhone: { type: String, required: true },
-    orderDate: { type: String, required: true },
+    deliveryDate: { type: String, required: true },
   },
 ]);
 

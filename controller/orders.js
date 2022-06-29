@@ -20,6 +20,6 @@ export const postOrders = async (req, res) => {
 
     res.json(order);
   } catch (err) {
-    console.log("error in order controller.js", error);
+    console.log("error in postOrders controller", error);
   }
 };
