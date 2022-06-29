@@ -41,6 +41,7 @@ const whiteList = [
   "http://tech-ecommerce-site.netlify.app",
 ];
 app.use(cors());
+app.options("*", cors());
 
 // {
 //   //web addresses allowed
