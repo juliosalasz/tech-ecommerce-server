@@ -12,6 +12,7 @@ export const getOrders = async (req, res) => {
 export const postOrders = async (req, res) => {
   try {
     const order = req.body;
+    console.log(order);
     //pass infro through the model
     const newOrder = new OrdersDisplay(order);
     //save into database
