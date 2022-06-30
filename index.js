@@ -3,7 +3,7 @@ import multer from "multer";
 import path from "path";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import cors from "cors";
+// import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -36,32 +36,25 @@ app.use(bodyParser.json());
 
 //cors to allow connect the api to react frontend
 
-const whiteList = [
-  "http://localhost:3000",
-  "http://tech-ecommerce-site.netlify.app",
-];
-app.use(cors());
-app.options("*", cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+    return res.status(200).json({});
+  }
+  next();
+});
 
-// {
-//   //web addresses allowed
-//   origin: ["http://localhost:3000", "tech-ecommerce-site.netlify.app"],
-//   //for allowing this commands
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   //for allowing cookies
-//   credentials: true,
-// }
 app.set("view engine", "ejs");
 app.use("/images", express.static("images"));
 
 //For using the localhost:5000/user commands
 // app.use("/user", productRoutes);
 app.use("/user", userRouter);
-
-app.post("/createdUser", async (req, res) => {
-  const user = req.body;
-  console.log(user);
-});
 
 //For using the localhost:5000/imageupload commands
 // app.use("/imageupload", productRoutes);
