@@ -12,6 +12,8 @@ import userRouter from "./routes/user.js";
 import productRouter from "./routes/products.js";
 import orderRouter from "./routes/orders.js";
 
+import ServerlessHttp from "serverless-http";
+
 //server started
 const app = express();
 app.use(express.json());
@@ -88,3 +90,5 @@ mongoose
     })
   )
   .catch((error) => console.log(error.message));
+
+module.exports.handler = ServerlessHttp(app);
